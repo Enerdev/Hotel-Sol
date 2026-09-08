@@ -15,6 +15,7 @@
     "dev:frontend": "cd frontend && npm run dev",
     "build": "cd backend && npm run build && cd ../frontend && npm run build && cd .. && rm -rf backend/public && mkdir -p backend/public && cp -r frontend/dist/. backend/public/ && rm -f backend/public/.htaccess",
     "start:debug": "node backend/dist/index.js",
+    "diag:logs": "echo '--- Buscando logs ---'; find /var/www/vhosts -iname '*error_log*' 2>/dev/null | grep -i hotel || echo 'no encontrado con find'; echo '--- Procesos node activos ---'; ps aux | grep '[n]ode' || echo 'sin salida de ps'; echo '--- Puerto 3000 ---'; ss -ltnp 2>/dev/null | grep 3000 || netstat -ltnp 2>/dev/null | grep 3000 || echo 'sin ss/netstat'",
     "deploy:plesk": "npm install && npm run build",
     "test:db": "cd backend && npm run test:db",
     "seed:passwords": "cd backend && npm run seed:passwords",

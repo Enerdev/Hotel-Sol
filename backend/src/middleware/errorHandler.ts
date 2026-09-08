@@ -54,6 +54,9 @@ export function errorHandler(
   console.error('💥 Error no controlado:', err);
   res.status(500).json({
     error: 'Error interno del servidor',
+    // TEMPORAL: mostramos el mensaje real para depurar el despliegue en Plesk.
+    // Quitar este campo "detalle" antes de dejarlo en producción final.
+    detalle: err instanceof Error ? err.message : String(err),
     ...(env.NODE_ENV === 'development' && err instanceof Error
       ? { stack: err.stack }
       : {}),

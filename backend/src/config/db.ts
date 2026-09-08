@@ -15,6 +15,10 @@ export const db = mysql.createPool({
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
+  // Si el host/puerto no responde, falla en 8s en vez de colgarse
+  // indefinidamente (evita que Passenger/Apache queden esperando para
+  // siempre y terminen mostrando un 500 genérico tras varios minutos).
+  connectTimeout: 8000,
   // Importante: que devuelva fechas como strings, no como objetos Date
   // (evita problemas de timezone entre MySQL y Node)
   dateStrings: true,

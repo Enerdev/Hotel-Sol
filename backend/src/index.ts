@@ -21,6 +21,8 @@ import { cobrosRouter } from './routes/cobros.routes.js';
 import { cajaRouter } from './routes/caja.routes.js';
 
 async function main() {
+  console.log('🚀 Iniciando backend...');
+  console.log(`   DB_HOST=${env.DB_HOST} DB_PORT=${env.DB_PORT} DB_NAME=${env.DB_NAME} NODE_ENV=${env.NODE_ENV}`);
   await testDbConnection();
 
   const app = express();

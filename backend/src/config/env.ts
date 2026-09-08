@@ -1,5 +1,12 @@
-import 'dotenv/config';
+import dotenv from 'dotenv';
+import path from 'path';
 import { z } from 'zod';
+
+// Carga el .env siempre desde backend/.env, sin importar el directorio de
+// trabajo con el que Passenger/Plesk arranque el proceso.
+// Este archivo compila a backend/dist/config/env.js, así que backend/.env
+// queda dos niveles arriba de __dirname.
+dotenv.config({ path: path.join(__dirname, '../../.env') });
 
 /**
  * Esquema de validación de variables de entorno.

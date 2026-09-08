@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [ master, main, develop ]
+  pull_request:
+    branches: [ master, main, develop ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+
+    - name: Install root dependencies
+      run: npm ci
+
+    - name: Install backend dependencies
+      run: cd backend && npm ci
+
+    - name: Install frontend dependencies
+      run: cd frontend && npm ci
+
+    - name: Check backend TypeScript
+      run: cd backend && npm run build
+
+    - name: Check frontend TypeScript + ESLint
+      run: cd frontend && npm run lint
+
+    - name: Check formatting
+      run: npx prettier --check "**/*.{ts,tsx,js,jsx,json,md}" --ignore-path .prettierignore

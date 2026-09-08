@@ -1,0 +1,66 @@
+{
+  "folders": [
+    {
+      "name": "🏨 Hotel System",
+      "path": "."
+    },
+    {
+      "name": "🔧 Backend",
+      "path": "backend"
+    },
+    {
+      "name": "⚛️ Frontend",
+      "path": "frontend"
+    },
+    {
+      "name": "📊 Database",
+      "path": "database"
+    }
+  ],
+  "settings": {
+    "typescript.preferences.importModuleSpecifier": "relative",
+    "typescript.suggest.autoImports": true,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+    "files.associations": {
+      "*.sql": "sql",
+      "*.env": "properties"
+    },
+    "emmet.includeLanguages": {
+      "typescript": "html",
+      "typescriptreact": "html"
+    },
+    "tailwindCSS.experimental.classRegex": [
+      ["cn\\(([^)]*)\\)", "([\"'`][^\"'`]*.*?[\"'`])"]
+    ],
+    "files.exclude": {
+      "**/node_modules": true,
+      "**/dist": true,
+      "**/.git": true,
+      "**/.DS_Store": true
+    },
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/dist": true,
+      "**/coverage": true,
+      "**/.git": true
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "ms-vscode.vscode-typescript-next",
+      "esbenp.prettier-vscode",
+      "dbaeumer.vscode-eslint",
+      "bradlc.vscode-tailwindcss",
+      "ms-vscode.vscode-json",
+      "rangav.vscode-thunder-client",
+      "ms-vscode-remote.remote-containers",
+      "ms-vscode.vscode-sqlite",
+      "cweijan.vscode-mysql-client2"
+    ]
+  }
+}

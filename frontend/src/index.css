@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+/* ============================================================================
+   TEMA: Hotel Dark Elegante
+   Paleta inspirada en hoteles boutique modernos: oscuro, dorado, profesional
+   ============================================================================ */
+
+@theme {
+  /* Colores base del fondo */
+  --color-bg-base: #0a0e1a;
+  --color-bg-surface: #111827;
+  --color-bg-surface-2: #1a2238;
+  --color-bg-elevated: #1f2937;
+
+  /* Bordes */
+  --color-border-color: #2a3447;
+  --color-border-hover: #3b4a64;
+
+  /* Textos */
+  --color-text-primary: #e5e7eb;
+  --color-text-secondary: #9ca3af;
+  --color-text-muted: #6b7280;
+  --color-text-inverse: #0a0e1a;
+
+  /* Acento principal — dorado elegante (estilo hotel) */
+  --color-accent: #d4a574;
+  --color-accent-hover: #e0b888;
+  --color-accent-muted: #8a6c4d;
+
+  /* Estados */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-info: #3b82f6;
+
+  /* Estados de habitación (semánticos) */
+  --color-room-available: #10b981;
+  --color-room-occupied: #3b82f6;
+  --color-room-reserved: #8b5cf6;
+  --color-room-dirty: #f59e0b;
+  --color-room-cleaning: #06b6d4;
+  --color-room-validate: #d4a574;
+  --color-room-out: #6b7280;
+
+  /* Tipografía */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ============================================================================
+   GLOBAL
+   ============================================================================ */
+
+html, body {
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-color);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-hover);
+}
+
+/* Smooth transitions */
+button, a, input, select {
+  transition: all 0.15s ease;
+}
+
+/* Focus accesible */
+*:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}

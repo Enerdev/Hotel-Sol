@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Serve the compiled Vite frontend when the repository root is the document root.
+  RewriteCond %{REQUEST_URI} !^/frontend/dist/
+  RewriteCond %{REQUEST_URI} !^/backend/
+  RewriteCond %{REQUEST_URI} !^/database/
+  RewriteRule ^(assets/.*)$ frontend/dist/$1 [L]
+
+  RewriteCond %{REQUEST_URI} !^/frontend/dist/
+  RewriteCond %{REQUEST_URI} !^/backend/
+  RewriteCond %{REQUEST_URI} !^/database/
+  RewriteRule ^(.*)$ frontend/dist/index.html [L]
+</IfModule>

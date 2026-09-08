@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Ejecutar linting en frontend
+cd frontend && npm run lint
+
+# Verificar que el backend compile
+cd ../backend && npm run build

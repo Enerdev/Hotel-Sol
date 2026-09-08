@@ -14,6 +14,7 @@
     "dev:backend": "cd backend && npm run dev",
     "dev:frontend": "cd frontend && npm run dev",
     "build": "cd backend && npm run build && cd ../frontend && npm run build && cd .. && rm -rf backend/public && mkdir -p backend/public && cp -r frontend/dist/. backend/public/ && rm -f backend/public/.htaccess",
+    "start:debug": "node backend/dist/index.js",
     "deploy:plesk": "npm install && npm run build",
     "test:db": "cd backend && npm run test:db",
     "seed:passwords": "cd backend && npm run seed:passwords",
